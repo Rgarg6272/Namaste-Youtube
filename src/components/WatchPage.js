@@ -2,9 +2,11 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { closeMenu } from "../utils/appSlice";
+import CommentsContainer from "./CommentsContainer";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
+  const videoId = searchParams.get("v");
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(closeMenu());
@@ -16,7 +18,7 @@ const WatchPage = () => {
           <iframe
             width="1200"
             height="600"
-            src={"https://www.youtube.com/embed/" + searchParams.get("v")}
+            src={"https://www.youtube.com/embed/" + videoId}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -24,6 +26,7 @@ const WatchPage = () => {
           ></iframe>
         </div>
       </div>
+      <CommentsContainer />
     </div>
   );
 };

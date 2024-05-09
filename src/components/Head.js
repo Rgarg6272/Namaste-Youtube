@@ -63,8 +63,12 @@ const Head = () => {
             onFocus={() => setShowSuggestions(true)}
             onBlur={() => setShowSuggestions(false)}
           />
-          <button className="border border-gray-400 px-5 py-2 rounded-r-full bg-gray-100">
-            🔍
+          <button className="border border-gray-400 px-5  pt-[0.4rem] pb-[0.88rem] rounded-r-full bg-gray-100">
+            <img
+              alt="search-icon"
+              className="h-5 mx-auto"
+              src="https://cdn-icons-png.flaticon.com/512/482/482631.png"
+            />
           </button>
         </div>
         {showSuggestions && suggestions.length > 0 && (
